@@ -38,7 +38,7 @@ def check_url(http_request):
     response = requests.request(method=http_request['method'],url=http_request['url'],headers=http_request['headers'],data=http_request['body'])
 
     if response.status_code >= 200 and response.status_code <= 299:
-        if response.elapsed.total_seconds() < 0.8:
+        if response.elapsed.total_seconds() < 0.5:
             url_domain[http_request['domain']]['UP']+=1
             return
 
